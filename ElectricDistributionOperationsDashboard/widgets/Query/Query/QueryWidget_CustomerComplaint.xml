@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<configuration>
+    <layer>http://<YourServer>/ArcGIS/rest/services/ElectricDistributionViewer/ElectricDistributionOperations/MapServer/1</layer>
+    <query>OBJECTID&gt;0</query>
+    <titlefield>ISSUE</titlefield>
+    <linkfield></linkfield>
+    <fields all="false">
+        <field name="NAME" alias="Name"/>
+        <field name="ADDRESS" alias="Address"/>
+        <field name="PHONE" alias="Phone"/>
+        <field name="EMAIL" alias="Email"/>
+		<field name="ISSUE" alias="Issue"/>
+		<field name="CALLDATE" alias="Call Date"/>
+    </fields>
+    <filterfield>
+        <name>ISSUE</name>
+        <alias>Filter by issue (e.g., Outage )</alias>
+    </filterfield>
+    <refreshrate></refreshrate>
+    <zoomscale>500000</zoomscale>
+    <info>widgets/InfoTemplates/InfoPopupWidget.swf</info>
+</configuration>

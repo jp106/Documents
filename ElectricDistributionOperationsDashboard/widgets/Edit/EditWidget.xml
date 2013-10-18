@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!-- If compiling this widget, make sure to add -keep-all-type-selectors=true to your compiler arguments in the FB project properties. -->
+<configuration>
+    <createoptions>
+        <polygondrawtools>freehandpolygon,extent,autoComplete</polygondrawtools>
+    </createoptions>
+    <deletefeatures>true</deletefeatures>
+    <geometryservice>http://<yourserver>/ArcGIS/rest/services/ElectricDistributionViewer/Geometry/GeometryServer</geometryservice>
+    <toolbarvisible>true</toolbarvisible>
+    <toolbarcutvisible>false</toolbarcutvisible>
+    <toolbarmergevisible>false</toolbarmergevisible>
+    <toolbarreshapevisible>true</toolbarreshapevisible>
+</configuration>

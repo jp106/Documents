@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<configuration>
+    <layer>http://gisdev:6080/arcgis/rest/services/Maps/OperatoinDashboardService/MapServer/1</layer>
+    <query>OBJECTID&gt;0</query>
+    <titlefield>MEMBERNBR</titlefield>
+    <linkfield></linkfield>
+    <fields all="false">
+        <field name="PD_JOBID" alias="PD_JOBID"/>       
+        <field name="MEMBERNBR" alias="MEMBERNBR"/>
+		<field name="MAPNUMBER" alias="MAPNUMBER"/>
+    </fields>
+    <filterfield>
+        <name>MEMBERNBR</name>
+        <alias>Filter by MEMBERNBR (e.g., 1607 )</alias>
+    </filterfield>
+    <refreshrate></refreshrate>
+    <zoomscale>500000</zoomscale>
+    <info>widgets/InfoTemplates/InfoPopupWidget.swf</info>
+</configuration>

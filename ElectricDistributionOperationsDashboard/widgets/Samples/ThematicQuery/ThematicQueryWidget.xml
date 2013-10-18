@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<configuration>
+    <info>widgets/Samples/ThematicQuery/InfoColumnChartWidget.swf</info>
+    <!-- labelref should match the label of the operational layer's label in main config. -->
+    <theme labelref="Performance Reports" >
+       <query layer="0" minscale="0" maxscale="0" legendurl="assets/images/Legend_TreeTrimHistory.png" > <!-- layer 4 is a state layer -->
+           <listfields>
+                <field name="FEEDERID" alias="Feeder ID" />
+                <field name="LastTrimDate" alias="Late date trimmed" />
+           </listfields>
+       </query>
+    </theme>
+</configuration>

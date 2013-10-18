@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<configuration>
+    <layer>http://gisdev:6080/arcgis/rest/services/Maps/OperatoinDashboardService/MapServer/2</layer>
+    <query>OBJECTID&gt;0</query>
+    <titlefield>TRANSFORMER_NUMBER</titlefield>
+    <linkfield></linkfield>
+    <fields all="false">
+        <field name="FEEDERID" alias="Feeder"/>
+        <field name="SERVADDR1" alias="SERVADDR1"/>
+        <field name="Voltage"/>
+        <field name="MAPNUMBER" alias="MAPNUMBER"/>
+    </fields>
+    <filterfield>
+        <name>FEEDERID</name>
+        <alias>Filter by Feeder ID (e.g., 6 )</alias>
+    </filterfield>
+    <refreshrate></refreshrate>
+    <zoomscale>500000</zoomscale>
+    <info>widgets/InfoTemplates/InfoPopupWidget.swf</info>
+</configuration>

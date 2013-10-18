@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<configuration>
+    <layers>
+        <layer>
+            <name>Transformers</name>
+            <url>http://<yourserver>/ArcGIS/rest/services/ElectricDistributionViewer/ElectricDistributionNetwork/MapServer/1</url>
+            <expression>FACILITYID = '[value]'</expression>
+            <textsearchlabel>Search by Facility ID  [ Example: 17825 ]:</textsearchlabel>
+            <graphicalsearchlabel>Use one of the graphical search tools to select transformers</graphicalsearchlabel>
+            <titlefield>FACILITYID</titlefield>
+            <linkfield></linkfield>
+            <fields all="false">
+                <field name="FACILITYID" alias="Facility ID"/>
+				<field name="MODEL" alias="Model"/>
+				<field name="SERIALNUMBER" alias="Serial Number"/>
+				<field name="KVA"/>
+				<field name="PHASE" alias="Phase"/>
+            </fields>
+        </layer>
+        <layer>
+            <name>Meters</name>
+            <url>http://<yourserver>/ArcGIS/rest/services/ElectricDistributionViewer/ElectricDistributionNetwork/MapServer/0</url>
+            <expression>SERIALNUMBER = '[value]'</expression>
+            <textsearchlabel>Search by Serial Number... [ Example: 24001]</textsearchlabel>
+            <graphicalsearchlabel>Use one of the graphical search tools to select Meters</graphicalsearchlabel>
+            <titlefield>SERIALNUMBER</titlefield>
+            <linkfield></linkfield>
+            <fields all="false">
+                <field name="SERIALNUMBER" alias="Serial Number"/>
+                <field name="ADDRESS" alias="Address"/>
+				<field name="PREMISE_NUMBER" alias="Premise Number"/>
+				<field name="CritCust" alias="Critical Customer"/>
+            </fields>
+        </layer>
+    </layers>
+    <zoomscale>5000</zoomscale>
+    <info>widgets/InfoTemplates/InfoPopupWidget.swf</info>
+</configuration>

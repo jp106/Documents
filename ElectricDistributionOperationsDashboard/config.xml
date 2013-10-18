@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2010 ESRI
+//
+// All rights reserved under the copyright laws of the United States.
+// You may freely redistribute and use this software, with or
+// without modification, provided you include the original copyright
+// and use restrictions.  See use restrictions in the file:
+// <install location>/License.txt
+//
+// Read more about ArcGIS Viewer for Flex 2.2 - http://links.esri.com/flexviewer
+//
+////////////////////////////////////////////////////////////////////////////////
+-->
+<configuration>
+    <title>Futura Electric Distribution Operations Dashboard</title>
+    <subtitle>Futura Systems</subtitle>
+    <logo>assets/images/futura_logo.png</logo>
+    <style>
+        <colors>0xCEE7F4,0x39628C,0x355D89,0x294867,0xCEE7F4</colors>
+        <alpha>0.8</alpha>
+    </style>
+
+	<!-- <splashpage label="Electric Distribution Operations Dashboard" config="widgets/Splash/SplashWidget.xml" url="widgets/Splash/SplashWidget.swf"/> -->
+	
+    <!-- UI elements -->
+    <widget left="10"  top="50"    config="widgets/Navigation/NavigationWidget.xml" url="widgets/Navigation/NavigationWidget.swf"/>
+    <widget right="-2" bottom="-2" config="widgets/OverviewMap/OverviewMapWidget.xml" url="widgets/OverviewMap/OverviewMapWidget.swf"/>
+    <widget right="20" top="55"    config="widgets/MapSwitcher/MapSwitcherWidget.xml" url="widgets/MapSwitcher/MapSwitcherWidget.swf"/>
+    <widget left="0"   top="0"     config="widgets/HeaderController/HeaderControllerWidget.xml" url="widgets/HeaderController/HeaderControllerWidget.swf"/>
+
+    <map initialextent="-8951207 3176295 -8937238 3183098" top="40">
+        <basemaps>			
+            <layer label="Online Aerial"  type="tiled" visible="false" alpha="1"
+                        url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"/>
+            <layer label="Online Topo"    type="tiled" visible="true" alpha="1"
+                        url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"/>
+			<layer label="Online Streets"    type="tiled" visible="false" alpha="1"
+                        url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"/>	
+        </basemaps>
+        <operationallayers>
+			<layer label="Network Infrastructure" type="dynamic" visible="true"
+                   url="http://192.168.4.97:6080/arcgis/rest/services/Maps/Homer_Demo_Webmap/MapServer"/>		
+            
+        </operationallayers>
+    </map>
+
+    <!-- widgets organized into widget containers that manage close/open etc -->
+    <!-- supported layout property options: horizontal(default)|float|vertical|fix-->
+	<widgetcontainer layout="float">
+		<widget label="Tree Trimming History"
+                left="105" top="55"
+                icon="assets/images/i_thematic.png"
+                config="widgets/Samples/ThematicQuery/ThematicQueryWidget.xml"
+                url="widgets/Samples/ThematicQuery/ThematicQueryWidget.swf"/>
+		<widget label="Bookmarks"  
+				left="430" top="90" 
+                icon="assets/images/i_bookmark.png"
+                config="widgets/Bookmark/BookmarkWidget.xml"
+                url="widgets/Bookmark/BookmarkWidget.swf"/>
+        <widget label="Outages by Time"
+                icon="assets/images/i_clock.png"
+                config="widgets/Time/TimeWidget.xml"
+                url="widgets/Time/TimeWidget.swf"/>       
+	    <widget label="Find an address"   
+                icon="assets/images/i_target.png"
+                config="widgets/Locate/LocateWidget_US.xml"
+                url="widgets/Locate/LocateWidget.swf"/>
+		<widget label="Search" 
+				left="80" top="280"  
+                icon="assets/images/i_search.png"
+                config="widgets/Search/SearchWidget.xml"
+                url="widgets/Search/SearchWidget.swf"/>
+        <widget label="Edit Field Notes"
+                icon="assets/images/i_edit.png"
+                config="widgets/Edit/EditWidget.xml"
+                url="widgets/Edit/EditWidget.swf"/>       
+		<widget label="Draw and Measure" 
+                icon="assets/images/i_draw2.png"
+                config="widgets/Draw/DrawWidget.xml"
+                url="widgets/Draw/DrawWidget.swf"/>
+        <widget label="Print" 
+                icon="assets/images/i_print.png"
+                config="widgets/Print/PrintWidget.xml"
+                url="widgets/Print/PrintWidget.swf"/>
+	</widgetcontainer>
+		
+	<widgetcontainer layout="horizontal">
+		<widgetgroup label="Operational Layers">
+			<widget label="Blink Count" 
+					icon="assets/images/i_WarningRed.png"
+					config="widgets/Query/QueryWidget_CriticalCustomers.xml"
+					url="widgets/Query/QueryWidget.swf"/>
+			<widget label="In Construction" 
+					icon="assets/images/i_Wrench.png"
+					config="widgets/Query/QueryWidget_TransformerRecall.xml"
+					url="widgets/Query/QueryWidget.swf"/>
+			<!-- <widget label="Customer Complaints" 
+					icon="assets/images/i_CellPhone.png"
+					config="widgets/Query/QueryWidget_CustomerComplaint.xml"
+					url="widgets/Query/QueryWidget.swf"/> -->
+			<widget label="Voltage Read" 
+					icon="assets/images/i_WarningYellow.png"
+					config="widgets/Query/QueryWidget_Outages.xml"
+					url="widgets/Query/QueryWidget.swf"/>
+			<widget label="Ready for Construction" 
+					icon="assets/images/i_wind.png"
+					config="widgets/Query/QueryWidget_Workorders.xml"
+					url="widgets/Query/QueryWidget.swf"/>
+		</widgetgroup>
+    </widgetcontainer>
+
+</configuration>

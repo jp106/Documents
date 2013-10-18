@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<configuration>
+
+    <dateformat>MM/DD/YYYY</dateformat>
+    <loop>true</loop>
+    <singlethumbastimeinstant>true</singlethumbastimeinstant>
+    <thumbcount>1</thumbcount>
+    <thumbmovingrate>1000</thumbmovingrate>
+    <timeextent>
+        <starttime>2010/12/16 18:00:00 UTC</starttime>
+        <endtime>2010/12/16 19:30:00 UTC</endtime>
+    </timeextent>
+    <timestops>
+        <timestopsinterval>5</timestopsinterval>
+        <timestopsunits>minutes</timestopsunits>
+    </timestops>
+
+</configuration>
